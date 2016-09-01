@@ -15,6 +15,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		hButton = CreateWindow(TEXT("BUTTON"), TEXT("再取得"), WS_VISIBLE | WS_CHILD, 0, 0, 0, 0, hWnd, (HMENU)IDOK, ((LPCREATESTRUCT)lParam)->hInstance, 0);
 		SendMessage(hWnd, WM_COMMAND, IDOK, 0);
 		break;
+	case WM_SETTINGCHANGE:
+		SendMessage(hWnd, WM_COMMAND, IDOK, 0);
+		break;
 	case WM_SIZE:
 		MoveWindow(hEdit, 10, 10, 256, 128, TRUE);
 		MoveWindow(hButton, 10, 148, 256, 32, TRUE);
