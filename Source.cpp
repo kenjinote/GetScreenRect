@@ -26,8 +26,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		if (LOWORD(wParam) == IDOK)
 		{
 			TCHAR szText[1024];
-			const DWORD dwWidth = GetSystemMetrics(0);
-			const DWORD dwHeight = GetSystemMetrics(1);
+			const DWORD dwWidth = GetSystemMetrics(SM_CXSCREEN);
+			const DWORD dwHeight = GetSystemMetrics(SM_CYSCREEN);
 			wsprintf(szText, TEXT("画面解像度\r\n\r\n幅 = %dピクセル\r\n高さ = %dピクセル"), dwWidth, dwHeight);
 			SetWindowText(hEdit, szText);
 		}
